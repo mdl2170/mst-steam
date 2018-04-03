@@ -214,6 +214,29 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media (max-width: 1366px) {
+  #intro .hero-image .tc-building {
+    left: calc(6%);
+    bottom: calc(60%);
+    width: 85%;
+  }
+
+  #intro .hero-image .cab {
+    left: calc(1%);
+    top: calc(90% - 10px);
+  }
+
+  #intro .intro-text {
+    left: calc(20%);
+    font-size: 10px;
+  }
+
+  #intro #steam-logo {
+    width: 75%;
+    height: auto;
+  }
+}
+
 @media (max-width: 1000px) {
   #intro .hero-image .tc-building {
     display: none;
