@@ -180,7 +180,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-#intro .product-screens {
+#intro .hero-image {
   position: absolute;
   left: 0;
   right: 0;
@@ -191,24 +191,46 @@ h1, h2, h3, h4, h5, h6 {
   height: 50%;
 }
 
-#intro .product-screens img {
-  /* box-shadow: 0px -2px 19px 4px rgba(0, 0, 0, 0.29); */
-}
-
-#intro .product-screens .product-screen-2 {
+#intro .hero-image .tc-building {
   position: relative;
   z-index: 20;
   left: calc(1%);
-  bottom: 115px;
+  bottom: 160px;
+}
+
+#intro .hero-image .cab {
+  position: relative;
+  z-index: 21;
+  left: calc(1%);
+  top: 435px;
+  left: 0px;
 }
 
 @media (max-width: 767px) {
-  #intro .product-screens .product-screen-2 {
+  #intro .hero-image .tc-building {
     /* position: static; */
     /* padding-top: 30px; */
   }
 }
 
+#count-down {
+  position: absolute;
+  left: calc(67%);
+  top: calc(30%);
+  text-align: center;
+  color:white;
+  font-size: 40px;
+  width: 400px;
+}
+
+#count-down .time-unit {
+  background: url('../img/time-bg.svg') no-repeat;
+  background-size: contain;
+  padding: 0px 7px;
+  font-size: 50px;
+  font-weight: 700;
+  color: #003b5d;
+}
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -637,7 +659,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: linear-gradient(45deg, #1de099, #1dc8cd);
 }
 
-/* Product Featuress Section
+/* Vision Section
 --------------------------------*/
 #vision {
   background: #f7ce5b;

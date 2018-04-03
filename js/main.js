@@ -121,5 +121,146 @@ jQuery(document).ready(function($) {
   });
 
   // custom code
+  var timerId = countdown(
+    new Date(2018, 3, 7, 9),
+    function(ts) {
+      var firstDigitOfDays, secondDigitOfDays,
+      firstDigitOfHours, secondDigitOfHours,
+      firstDigitOfMinutes, secondDigitOfDMinutes,
+      firstDigitOfSeconds, secondDigitOfDSeconds;
 
+      if(ts.days < 10)
+      {
+        firstDigitOfDays = 0;
+        secondDigitOfDays = ts.days;
+      }
+      else {
+        firstDigitOfDays = Math.round(ts.days / 10);
+        secondDigitOfDays = ts.days % 10;
+      }
+      if(ts.hours < 10)
+      {
+        firstDigitOfHours = 0;
+        secondDigitOfHours = ts.hours;
+      }
+      else {
+        firstDigitOfHours = Math.floor(ts.hours / 10);
+        secondDigitOfHours = ts.hours % 10;
+      }
+      if(ts.minutes < 10)
+      {
+        firstDigitOfMinutes = 0;
+        secondDigitOfMinutes = ts.minutes;
+      }
+      else {
+        firstDigitOfMinutes = Math.floor(ts.minutes / 10);
+        secondDigitOfMinutes = ts.minutes % 10;
+      }
+      if(ts.seconds < 10)
+      {
+        firstDigitOfSeconds = 0;
+        secondDigitOfSeconds = ts.seconds;
+      }
+      else {
+        firstDigitOfSeconds = Math.floor(ts.seconds / 10);
+        secondDigitOfSeconds = ts.seconds % 10;
+      }
+
+      $('#count-down').html(`<div class="container">
+      <div class="row no-gutters">
+        <div class="col-lg-4">
+          <div class="row">
+            <div class="col-lg-12">
+              <span class="time-unit">${firstDigitOfDays}</span>
+              <span class="time-unit">${secondDigitOfDays}</span>
+              <span>:</span>
+            </div>
+            <div class="col-lg-12">
+              <p>days</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="row">
+            <div class="col-lg-12">
+              <span class="time-unit">${firstDigitOfHours}</span>
+              <span class="time-unit">${secondDigitOfHours}</span>
+              <span>:</span>
+            </div>
+            <div class="col-lg-12">
+              <p>hours</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="row">
+            <div class="col-lg-12">
+              <span class="time-unit">${firstDigitOfMinutes}</span>
+              <span class="time-unit">${secondDigitOfMinutes}</span>
+            </div>
+          <div class="col-lg-12">
+            <p>minutes</p>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="row no-gutters"><div class="col-lg-12"><p style="font-size: 24px">to Academic Festival</p></div></div></div>`);
+    },
+    countdown.DAYS|countdown.HOURS|countdown.MINUTES|countdown.SECONDS);
+
+    var bulb = anime({
+      targets: '#bulb',
+      translateY: -20,
+      loop: true,
+      direction: 'alternate',
+      easing: 'easeInSine'
+    });
+
+    var whiteCross = anime({
+      targets: '#left-white-cross',
+      fill: [
+        {value: '#c0d0d2'},
+        {value: '#ffd43d'},
+        {value: '#fff'},
+      ],
+      direction: 'alternate',
+      duration: 3000,
+      loop: true
+    });
+
+    var yellowCross = anime({
+      targets: ['#left-yellow-cross', '#right-yellow-cross'],
+      fill: [
+        {value: '#fff'},
+        {value: '#c0d0d2'},
+        {value: '#ffd43d'}
+      ],
+      direction: 'alternate',
+      duration: 3000,
+      loop: true
+    });
+
+    var greyCross = anime({
+      targets: ['#left-grey-cross', '#right-grey-cross'],
+      fill: [
+        {value: '#ffd43d'},
+        {value: '#fff'},
+        {value: '#c0d0d2'}
+      ],
+      direction: 'alternate',
+      duration: 3000,
+      loop: true
+    });
+
+    var cab = anime({
+      targets: '.cab',
+      translateX: 1800,
+      loop: true,
+      duration: 10000,
+      direction: 'alternate',
+      easing: 'easeInOutCirc',
+      delay: 1000,
+    });
 });
