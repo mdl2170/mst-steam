@@ -217,25 +217,45 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-@media (max-width: 2100px) {
+@media (min-width: 2100px) {
   #intro .hero-image .tc-building {
-    left: calc(6%);
-    bottom: calc(60%);
-    width: 80%;
+    left: calc(10%);
+    bottom: calc(30% + 10px);
   }
 
   #intro .hero-image .cab {
     left: calc(1%);
-    top: calc(90% - 10px);
+    top: calc(95% - 10px);
   }
 
   #intro .intro-text {
     left: calc(20%);
   }
 
+  #intro p {
+    font-size: 26px;
+  }
+
+  #intro .intro-text p {
+      left: calc(50%);
+  }
+
   #intro #steam-logo {
     width: 100%;
     height: auto;
+  }
+
+  #count-down {
+    top: calc(30% + 20px);
+    font-size: 80px;
+    width: calc(25%);
+  }
+  #count-down .time-unit {
+    font-size: 80px;
+    padding: 0px 8px;
+  }
+  #count-down .subtitle {
+    font-size: 40px;
   }
 }
 
